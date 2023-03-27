@@ -7,10 +7,10 @@ import Products from "../Components/Products";
 function Home() {
   return (
     <>
-      {/* <HeroSection />
+      <HeroSection />
       <Products />
       <NewsLetter />
-      <Footer /> */}
+      <Footer />
     </>
   );
 }

@@ -84,6 +84,69 @@ const products = [
       "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/55ud2a00-55-y1s-pro-oneplus-original-imagk9wcydhe7pbv.jpeg?q=70",
     brand: "OnePlus",
   },
+  {
+    title: "LG UQ7500 139 cm (55 inch) Ultra HD (4K)",
+    price: "₹48,490",
+    image:
+      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/-original-imagg24zpbk2h7tx.jpeg?q=70",
+    brand: "LG",
+  },
+  {
+    title: "OnePlus Y1S Pro 138 cm (55 inch) Ultra HD (4K)",
+    price: "₹39,999",
+    image:
+      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/55ud2a00-55-y1s-pro-oneplus-original-imagk9wcydhe7pbv.jpeg?q=70",
+    brand: "OnePlus",
+  },
+  {
+    title: "LG UQ7500 139 cm (55 inch) Ultra HD (4K)",
+    price: "₹48,490",
+    image:
+      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/-original-imagg24zpbk2h7tx.jpeg?q=70",
+    brand: "LG",
+  },
+  {
+    title: "OnePlus Y1S Pro 138 cm (55 inch) Ultra HD (4K)",
+    price: "₹39,999",
+    image:
+      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/55ud2a00-55-y1s-pro-oneplus-original-imagk9wcydhe7pbv.jpeg?q=70",
+    brand: "OnePlus",
+  },
+  {
+    title: "LG UQ7500 139 cm (55 inch) Ultra HD (4K)",
+    price: "₹48,490",
+    image:
+      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/-original-imagg24zpbk2h7tx.jpeg?q=70",
+    brand: "LG",
+  },
+  {
+    title: "OnePlus Y1S Pro 138 cm (55 inch) Ultra HD (4K)",
+    price: "₹39,999",
+    image:
+      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/55ud2a00-55-y1s-pro-oneplus-original-imagk9wcydhe7pbv.jpeg?q=70",
+    brand: "OnePlus",
+  },
+  {
+    title: "LG UQ7500 139 cm (55 inch) Ultra HD (4K)",
+    price: "₹48,490",
+    image:
+      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/-original-imagg24zpbk2h7tx.jpeg?q=70",
+    brand: "LG",
+  },
+  {
+    title: "OnePlus Y1S Pro 138 cm (55 inch) Ultra HD (4K)",
+    price: "₹39,999",
+    image:
+      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/55ud2a00-55-y1s-pro-oneplus-original-imagk9wcydhe7pbv.jpeg?q=70",
+    brand: "OnePlus",
+  },
+  {
+    title: "OnePlus Y1S Pro 138 cm (55 inch) Ultra HD (4K)",
+    price: "₹39,999",
+    image:
+      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/55ud2a00-55-y1s-pro-oneplus-original-imagk9wcydhe7pbv.jpeg?q=70",
+    brand: "OnePlus",
+  },
 ];
 
 export default Products;
