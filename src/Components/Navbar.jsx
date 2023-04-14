@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaCartPlus, FaHeart } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
+  const [sticky, setSticky] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 10) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
   const addToFavourite = () => {
     console.log("Added to Favourite");
     toast("Added to Favourite");

@@ -20,7 +20,7 @@ function Footer() {
           </svg>
         </div>
         <div>
-          <h1 className="text-xl font-bold text-blue-700 dark:text-gray-100">
+          <h1 className="text-xl font-bold text-white dark:text-gray-100">
             ShopCart
           </h1>
         </div>

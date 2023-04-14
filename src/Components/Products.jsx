@@ -13,12 +13,13 @@ function Products() {
 
     console.log(datas);
 
-    // const allProduct = datas.map((data) => ({
-    //   id: data.id,
-    //   title: data.title,
-    //   prdImage: data.image,
-    // }));
-    setProducts(datas);
+    const allProduct = datas.map((data) => ({
+      id: data.id,
+      title: data.title,
+      prdImage: data.image,
+      price: data.price,
+    }));
+    setProducts(allProduct);
   };
 
   useEffect(() => {
@@ -29,10 +30,11 @@ function Products() {
     <section className="text-gray-600 dark:text-gray-900 body-font">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap -m-14 ">
-          {products.map((product, index) => (
+          {products.map((product) => (
             <div
-              key={index}
-              className="lg:w-1/4 sm:w-1/2  p-4 w-full hover:shadow-2xl"
+              key={product.id}
+              onClick={() => {}}
+              className="lg:w-1/4 sm:w-1/2   p-4 w-full rounded-md outline-none  hover:outline-orange-500 hover:shadow-2xl"
             >
               <a
                 className="block relative h-48 rounded overflow-hidden"
@@ -41,7 +43,7 @@ function Products() {
                 <img
                   alt={product.title}
                   className="object-contain object-center w-full h-full block"
-                  src={product.image}
+                  src={product.prdImage}
                 />
               </a>
               <div className="mt-4">
@@ -51,7 +53,7 @@ function Products() {
                 <h2 className="text-gray-900 title-font text-lg font-medium dark:text-white">
                   {product.title}
                 </h2>
-                <p className="mt-1 dark:text-gray-300">${product.price}</p>
+                <p className="mt-1 text-orange-400">₹{product.price}</p>
               </div>
             </div>
           ))}

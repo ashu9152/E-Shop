@@ -2,13 +2,13 @@ import React from "react";
 
 function NewsLetter() {
   return (
-    <div className="container mx-auto py-10 px-10 lg:px-0">
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+    <div className="container mx-auto bg-orange-400 rounded-md my-10  py-10 px-10 lg:px-0">
+      <div className="flex flex-col  lg:flex-row lg:items-center pl-4 lg:justify-between">
         <div className="w-full md:w-1/2">
-          <h2 className="text-3xl font-bold text-black dark:text-white">
+          <h2 className="text-3xl font-bold  text-black dark:text-white">
             Subscribe to our newsletter
           </h2>
-          <p className="text-gray-600 mt-2">
+          <p className="text-white mt-2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
             ipsum eu nunc commodo posuere et sit amet ligula.
           </p>
