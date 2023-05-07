@@ -8,15 +8,18 @@ import { Cart } from "./Components/Cart";
 import { useState, useEffect } from "react";
 
 function App() {
+  const [singleItem, setSingleItem] = useState();
   const [cartItem, setCartItem] = useState([]);
 
   const addToCart = (item) => {
     setCartItem([...cartItem, item]);
   };
-  console.log(cartItem);
+  console.log(singleItem);
 
   return (
-    <CartContext.Provider value={{ cartItem, addToCart, setCartItem }}>
+    <CartContext.Provider
+      value={{ singleItem, addToCart, setSingleItem, cartItem, setCartItem }}
+    >
       <BrowserRouter>
         <Navbar />
         <Routes>

@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { CartContext } from "../Context";
 
 function Product() {
+  const {
+    singleItem: { id, title },
+  } = useContext(CartContext);
+
   return (
     <section className="text-gray-600 dark:bg-gray-900 body-font overflow-hidden">
       <div className="container px-5 py-24 mx-auto">
@@ -13,7 +18,7 @@ function Product() {
           />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
             <h2 className="text-sm title-font text-gray-500 dark:text-gray-300 tracking-widest">
-              Apple
+              {title}
             </h2>
             <h1 className="text-gray-900 dark:text-white text-3xl title-font font-medium mb-1">
               APPLE iPhone 11 (White, 128 GB)

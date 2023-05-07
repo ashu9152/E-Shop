@@ -1,9 +1,35 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import Axios from "axios";
 import { CartContext } from "../Context";
 
-function Products({ products }) {
-  const { addToCart } = useContext(CartContext);
+const url = "https://fakestoreapi.com/products";
+
+function Products() {
+  const [products, setProducts] = useState([]);
+
+  const fetchProducts = async () => {
+    const urlResult = await Axios.get(url);
+
+    const datas = urlResult.data;
+
+    console.log(datas);
+
+    const allProduct = datas.map((data) => ({
+      id: data.id,
+      title: data.title,
+      prdImage: data.image,
+      describe: data.description,
+      price: data.price,
+    }));
+    setProducts(allProduct);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, [setProducts]);
+
+  const { setSingleItem } = useContext(CartContext);
 
   return (
     <section className="text-gray-600 dark:text-gray-900 body-font">
@@ -13,7 +39,7 @@ function Products({ products }) {
             <div
               key={product.id}
               onClick={() => {
-                addToCart(product);
+                setSingleItem(product);
               }}
               className="lg:w-1/4 sm:w-1/2   p-4 w-full rounded-md outline-none  hover:outline-orange-500 hover:shadow-2xl"
             >
