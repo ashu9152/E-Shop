@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Product() {
   return (
@@ -124,9 +125,11 @@ function Product() {
               <span className="title-font font-medium text-2xl text-gray-900 dark:text-white">
                 ₹47,199
               </span>
-              <button className="ml-auto rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500">
-                Add To Cart
-              </button>
+              <NavLink to={"/cart"}>
+                <button className="ml-auto rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500">
+                  Add To Cart
+                </button>
+              </NavLink>
               <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                 <svg
                   fill="currentColor"
