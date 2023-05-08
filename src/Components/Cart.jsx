@@ -1,12 +1,19 @@
-import React from "react";
-// import { Toast } from "react-toastify/dist/components";
+import React, { useContext, useState, useEffect } from "react";
+import { CartContext } from "../Context";
 
-export const Cart = () => {
+function Cart() {
+  const { cartItem } = useContext(CartContext);
+  const [cartValue, setCartValue] = useState(cartItem);
+
+  useEffect(() => {
+    setCartValue(cartItem);
+  }, [cartItem]);
+
   return (
     <div className="flex flex-col mx-auto max-w-3xl p-6 space-y-4 sm:p-10 dark:bg-gray-900 dark:text-gray-100">
       <h2 className="text-xl font-semibold">Your cart</h2>
       <ul className="flex flex-col divide-y divide-gray-700">
-        {products.map((product) => (
+        {cartValue.map((product) => (
           <li
             key={product.id}
             className="flex flex-col py-6 sm:flex-row sm:justify-between"
@@ -14,18 +21,18 @@ export const Cart = () => {
             <div className="flex w-full space-x-2 sm:space-x-4">
               <img
                 className="flex-shrink-0 object-contain w-20 h-20 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500"
-                src={product.imageSrc}
-                alt={product.name}
+                src={product.prdImage}
+                alt={product.title}
               />
               <div className="flex flex-col justify-between w-full pb-4">
                 <div className="flex justify-between w-full pb-2 space-x-2">
                   <div className="space-y-1">
                     <h3 className="text-lg font-semibold leading-snug sm:pr-8">
-                      {product.name}
+                      {product.title}
                     </h3>
-                    <p className="text-sm dark:text-gray-400">
+                    {/* <p className="text-sm dark:text-gray-400">
                       {product.color}
-                    </p>
+                    </p> */}
                   </div>
                   <div className="text-right">
                     <p className="text-lg font-semibold">{product.price}</p>
@@ -91,45 +98,45 @@ export const Cart = () => {
       </div>
     </div>
   );
-};
+}
 
-Cart.displayName = "Cart";
+export default Cart;
 
-const products = [
-  {
-    id: 1,
-    name: "APPLE iPhone 11 (White, 128 GB)",
-    href: "#",
-    price: "₹47,199",
-    originalPrice: "₹48,900",
-    discount: "5% Off",
-    color: "White",
-    size: "6.1 inch",
-    imageSrc:
-      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/shopping-cart/iphone-11-256-u-mwm82hn-a-apple-0-original-imafkg25mhaztxns.jpeg?q=90",
-  },
-  {
-    id: 2,
-    name: "Syska 20000 mAh Power Bank",
-    href: "#",
-    price: "₹1,549",
-    originalPrice: "₹2,499",
-    discount: "38% off",
-    color: "Black",
-    leadTime: "3-4 weeks",
-    size: "20000 mAh",
-    imageSrc:
-      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/shopping-cart/p2024j-bk-p2024j-20000-syska-original-imafz4zuunbw3mfu.jpeg?q=70",
-  },
-  {
-    id: 3,
-    name: "Back Cover for Apple Iphone 11",
-    href: "#",
-    price: "₹219 ",
-    originalPrice: "₹999",
-    discount: "78% off",
-    color: "Black",
-    imageSrc:
-      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/shopping-cart/linetpu-029-012-101-gadgetm-original-imag7ayekbkvfu4f.jpeg?q=70",
-  },
-];
+// const products = [
+//   {
+//     id: 1,
+//     name: "APPLE iPhone 11 (White, 128 GB)",
+//     href: "#",
+//     price: "₹47,199",
+//     originalPrice: "₹48,900",
+//     discount: "5% Off",
+//     color: "White",
+//     size: "6.1 inch",
+//     imageSrc:
+//       "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/shopping-cart/iphone-11-256-u-mwm82hn-a-apple-0-original-imafkg25mhaztxns.jpeg?q=90",
+//   },
+//   {
+//     id: 2,
+//     name: "Syska 20000 mAh Power Bank",
+//     href: "#",
+//     price: "₹1,549",
+//     originalPrice: "₹2,499",
+//     discount: "38% off",
+//     color: "Black",
+//     leadTime: "3-4 weeks",
+//     size: "20000 mAh",
+//     imageSrc:
+//       "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/shopping-cart/p2024j-bk-p2024j-20000-syska-original-imafz4zuunbw3mfu.jpeg?q=70",
+//   },
+//   {
+//     id: 3,
+//     name: "Back Cover for Apple Iphone 11",
+//     href: "#",
+//     price: "₹219 ",
+//     originalPrice: "₹999",
+//     discount: "78% off",
+//     color: "Black",
+//     imageSrc:
+//       "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/shopping-cart/linetpu-029-012-101-gadgetm-original-imag7ayekbkvfu4f.jpeg?q=70",
+//   },
+// ];

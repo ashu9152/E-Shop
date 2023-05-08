@@ -4,8 +4,8 @@ import Single from "./Components/SingleProduct";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import { CartContext } from "./Context";
-import { Cart } from "./Components/Cart";
-import { useState, useEffect } from "react";
+import Cart from "./Components/Cart";
+import { useState } from "react";
 
 function App() {
   const [singleItem, setSingleItem] = useState();
@@ -14,7 +14,7 @@ function App() {
   const addToCart = (item) => {
     setCartItem([...cartItem, item]);
   };
-  console.log(singleItem);
+  console.log(cartItem);
 
   return (
     <CartContext.Provider

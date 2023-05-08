@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { CartContext } from "../Context";
 
 function Product() {
   const {
-    singleItem: { id, title },
+    singleItem: { id, title, prdImage, describe, price },
+    addToCart,
   } = useContext(CartContext);
 
   return (
@@ -14,14 +15,14 @@ function Product() {
           <img
             alt="APPLE iPhone 11 (White, 128 GB)"
             className="lg:w-1/2 w-full lg:h-96 h-64 object-contain object-center rounded"
-            src="https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/product-overview/iphone-11-256-u-mwm82hn-a-apple-0-original-imafkg25mhaztxns.jpeg?q=90"
+            src={prdImage}
           />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
             <h2 className="text-sm title-font text-gray-500 dark:text-gray-300 tracking-widest">
-              {title}
+              {id}
             </h2>
             <h1 className="text-gray-900 dark:text-white text-3xl title-font font-medium mb-1">
-              APPLE iPhone 11 (White, 128 GB)
+              {title}
             </h1>
             <div className="flex mb-4">
               <span className="flex items-center">
@@ -85,32 +86,24 @@ function Product() {
                 </span>
               </span>
             </div>
-            <p className="leading-relaxed dark:text-gray-300">
-              iPhone 13. boasts an advanced dual-camera system that allows you
-              to click mesmerising pictures with immaculate clarity.
-              Furthermore, the lightning-fast A15 Bionic chip allows for
-              seamless multitasking, elevating your performance to a new
-              dimension. A big leap in battery life, a durable design, and a
-              bright Super Retina XDR display facilitate boosting your user
-              experience.
-            </p>
+            <p className="leading-relaxed dark:text-gray-300">{describe}</p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
-              <div className="flex">
+              {/* <div className="flex">
                 <span className="mr-3 dark:text-gray-300">Color</span>
                 <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
                 <button className="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
                 <button className="border-2 border-gray-300 ml-1 bg-purple-500 rounded-full w-6 h-6 focus:outline-none"></button>
-              </div>
+              </div> */}
               <div className="flex items-center ml-auto dark:text-white">
-                <span className="mr-3">Size</span>
+                {/* <span className="mr-3">Size</span> */}
                 <div className="relative">
-                  <select className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-500 text-base pl-3 pr-10">
+                  {/* <select className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-500 text-base pl-3 pr-10">
                     <option>SM</option>
                     <option>M</option>
                     <option>L</option>
                     <option>XL</option>
-                  </select>
-                  <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
+                  </select> */}
+                  {/* <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
                     <svg
                       fill="none"
                       stroke="currentColor"
@@ -122,16 +115,21 @@ function Product() {
                     >
                       <path d="M6 9l6 6 6-6"></path>
                     </svg>
-                  </span>
+                  </span> */}
                 </div>
               </div>
             </div>
             <div className="flex">
               <span className="title-font font-medium text-2xl text-gray-900 dark:text-white">
-                ₹47,199
+                ₹{price}
               </span>
               <NavLink to={"/cart"}>
-                <button className="ml-auto rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500">
+                <button
+                  onClick={() => {
+                    addToCart({ id, title, prdImage, price });
+                  }}
+                  className="ml-auto rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500"
+                >
                   Add To Cart
                 </button>
               </NavLink>
