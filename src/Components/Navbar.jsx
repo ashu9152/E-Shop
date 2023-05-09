@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaCartPlus, FaHeart } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { NavLink } from "react-router-dom";

@@ -8,22 +8,22 @@ function HeroSection() {
   return (
     <>
       <div className="flex flex-wrap md:justify-center gap-4">
-        <div className=" flex  md:flex-row flex-col mt-4 gap-4 ">
-          <div className="cursor-pointer shrink">
-            <img className="lg:h-[33rem] h-[20rem]" src={women} alt="" />
+        <div className=" flex mt-4 gap-4 ">
+          <div className="cursor-pointer shrink ">
+            <img className="sm:h-[31rem]  " src={women} alt="" />
           </div>
 
           <div className="cursor-pointer shrink ">
-            <img className="lg:h-[33rem] h-[20rem]" src={jewel} alt="" />
+            <img className="sm:h-[31rem] " src={jewel} alt="" />
           </div>
         </div>
-        <div className=" flex  flex-col mt-4 gap-4 justify-center ">
+        <div className=" flex  lg:flex-col mt-3  gap-4 justify-center ">
           <div className="cursor-pointer">
-            <img className="lg:h-64" src={men} alt="" />
+            <img className="sm:h-60 " src={men} alt="" />
           </div>
 
           <div className="cursor-pointer">
-            <img className="lg:h-64" src={electronic} alt="" />
+            <img className="sm:h-60 " src={electronic} alt="" />
           </div>
         </div>
       </div>
