@@ -36,7 +36,7 @@ function Cart() {
                     </p> */}
                   </div>
                   <div className="text-right">
-                    <p className="text-lg font-semibold">{product.price}</p>
+                    <p className="text-lg font-semibold">₹{product.price}</p>
                   </div>
                 </div>
                 <div className="flex text-sm divide-x">
