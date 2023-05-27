@@ -6,8 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
   const addToFavourite = () => {
-    console.log("Added to Favourite");
-    toast("Added to Favourite");
+
+    toast("This Feature is unnder Maintanence");
     // alert("Added to Favourite");
   };
   return (
@@ -22,7 +22,8 @@ const Navbar = () => {
           <div className="flex text-2xl items-center text-white ">
             <FaHeart
               onClick={addToFavourite}
-              className="hover:text-gray-700 cursor-pointer"
+              title="Under Maintanence"
+              className="hover:text-gray-700 cursor-pointer "
             />
             <NavLink to={"/cart"}>
               <FaCartPlus className="ml-4 hover:text-gray-700 cursor-pointer" />

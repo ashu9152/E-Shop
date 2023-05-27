@@ -1,12 +1,25 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
 import { CartContext } from "../Context";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Product() {
   const {
     singleItem: { id, title, prdImage, describe, price },
     addToCart,
   } = useContext(CartContext);
+
+  const addToFavourite = () => {
+    console.log("Added to Favourite");
+    toast("Added to Favourite");
+    // alert("Added to Favourite");
+  };
+
+  const showToastMessage = () => {
+    toast.success("Product added to cart", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
 
   return (
     <section className="text-gray-600 dark:bg-gray-900 body-font overflow-hidden">
@@ -123,17 +136,22 @@ function Product() {
               <span className="title-font font-medium text-2xl text-gray-900 dark:text-white">
                 ₹{price}
               </span>
-              <NavLink to={"/cart"}>
-                <button
-                  onClick={() => {
-                    addToCart({ id, title, prdImage, price });
-                  }}
-                  className="ml-auto rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500"
-                >
-                  Add To Cart
-                </button>
-              </NavLink>
-              <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+
+              <button
+                onClick={() => {
+                  addToCart({ id, title, prdImage, price });
+                  showToastMessage();
+                }}
+                className="ml-auto rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500"
+              >
+                Add To Cart
+              </button>
+              <ToastContainer />
+
+              <button
+                onClick={addToFavourite}
+                className="rounded-full w-10 h-10 bg-gray-200 hover:bg-red-300 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4 hover:text-red-500"
+              >
                 <svg
                   fill="currentColor"
                   strokeLinecap="round"
